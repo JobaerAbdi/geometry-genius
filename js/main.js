@@ -4,8 +4,9 @@ document.getElementById('btn-triangle').addEventListener('click',function(){
     const triangleBaseField = getInputField('triangle-base');
     const triangleHeightField = getInputField('triangle-height');
     const triangleName = getInnerText('triangle-name');
-    const triangleArea = 0.5 * triangleBaseField * triangleHeightField;
-    areaCalculator(triangleName,triangleArea)
+    const triangleArea = 0.5 * parseFloat(triangleBaseField) * parseFloat(triangleHeightField);
+    const triangleTwoDecimalNumberArea = triangleArea.toFixed(2);
+    areaCalculator(triangleName, triangleTwoDecimalNumberArea);
     //emptyInputField('triangle-base');
     //emptyInputField('triangle-height');
 
@@ -16,8 +17,9 @@ document.getElementById('btn-rectangle').addEventListener('click',function(){
     const rectangleWidthField = getInputField('rectangle-width');
     const rectangleLengthField = getInputField('rectangle-length');
     const rectangleName = getInnerText('rectangle-name');
-    const rectangleArea = rectangleWidthField * rectangleLengthField;
-    areaCalculator(rectangleName,rectangleArea)
+    const rectangleArea = parseFloat(rectangleWidthField) * parseFloat(rectangleLengthField);
+    const rectangleTwoDecimalNumberArea = rectangleArea.toFixed(2);
+    areaCalculator(rectangleName, rectangleTwoDecimalNumberArea);
     //emptyInputField('triangle-base');
     //emptyInputField('triangle-height');
 
@@ -28,8 +30,10 @@ document.getElementById('btn-parallelogram').addEventListener('click',function()
     const parallelogramBaseField = getInnerText('parallelogram-base');
     const parallelogramHeightField = getInnerText('parallelogram-height');
     const parallelogramName = getInnerText('parallelogram-name');
-    const parallelogramArea = parseInt(parallelogramBaseField) * parseInt(parallelogramHeightField);
-    areaCalculator(parallelogramName,parallelogramArea);
+    const parallelogramArea = parseFloat(parallelogramBaseField) * parseFloat(parallelogramHeightField);
+    const parallelogramTwoDecimalNumberArea = parallelogramArea.toFixed(2);
+    areaCalculator(parallelogramName, parallelogramTwoDecimalNumberArea);
+
     //emptyInputField('triangle-base');
     //emptyInputField('triangle-height');
 });
@@ -39,8 +43,36 @@ document.getElementById('btn-rhombus').addEventListener('click',function(){
     const rhombusD1Field = getInnerText('rhombus-d1');
     const rhombusD2Field = getInnerText('rhombus-d2');
     const rhombusName = getInnerText('rhombus-name');
-    const rhombusArea = 0.5 *  parseInt(rhombusD1Field) * parseInt(rhombusD2Field);
-    areaCalculator(rhombusName, rhombusArea);
+    const rhombusArea = 0.5 * parseFloat(rhombusD1Field) * parseFloat(rhombusD2Field);
+    const rhombusTwoDecimalNumberArea = rhombusArea.toFixed(2);
+    areaCalculator(rhombusName, rhombusTwoDecimalNumberArea);
+    //console.log(parallelogramName,parallelogramArea , typeof parallelogramArea);
+    //emptyInputField('triangle-base');
+    //emptyInputField('triangle-height');
+});
+
+document.getElementById('btn-pentagon').addEventListener('click',function(){
+    serial += 1;
+    const pentagonPerimeterField = getInnerText('pentagon-perimeter');
+    const pentagonBaseField = getInnerText('pentagon-base');
+    const pentagonName = getInnerText('pentagon-name');
+    const pentagonArea = 0.5 * parseFloat(pentagonPerimeterField) * parseFloat(pentagonBaseField);
+    const pentagonTwoDecimalNumberArea = pentagonArea.toFixed(2);
+    areaCalculator(pentagonName, pentagonTwoDecimalNumberArea);
+    //console.log(parallelogramName,parallelogramArea , typeof parallelogramArea);
+    //emptyInputField('triangle-base');
+    //emptyInputField('triangle-height');
+});
+
+document.getElementById('btn-ellipse').addEventListener('click',function(){
+    serial += 1;
+    const PI_Value = 3.14;
+    const ellipseMajorAxisField = getInnerText('ellipse-majorAxis');
+    const ellipseMinorAxisField = getInnerText('ellipse-minorAxis');
+    const ellipseName = getInnerText('ellipse-name');
+    const ellipseArea = PI_Value *  parseFloat(ellipseMajorAxisField) * parseFloat(ellipseMinorAxisField);
+    const ellipseTwoDecimalNumberArea = ellipseArea.toFixed(2);
+    areaCalculator(ellipseName, ellipseTwoDecimalNumberArea);
     //console.log(parallelogramName,parallelogramArea , typeof parallelogramArea);
     //emptyInputField('triangle-base');
     //emptyInputField('triangle-height');
