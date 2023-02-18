@@ -1,35 +1,45 @@
     
-    /* -----------------------blog button EventListener start----------------------------- */
+/* -----------------------blog button EventListener start----------------------------- */
 document.getElementById('blog-id').addEventListener('click',function(){
     window.location.href = 'index-question.html';
 });
-    /* -----------------------blog button EventListener end----------------------------- */
+/* -----------------------blog button EventListener end----------------------------- */
 
 
-    /* -----------------------Triangle EventListener and Function start----------------------------- */
+/* -----------------------Triangle EventListener and Function start----------------------------- */
 let serial = 0;
 document.getElementById('btn-triangle').addEventListener('click',function(){
     serial += 1;
     const triangleBaseField = getInputField('triangle-base');
     const triangleHeightField = getInputField('triangle-height');
+    emptyInputField('triangle-base');
+    emptyInputField('triangle-height');
+    if((triangleBaseField, triangleHeightField)  == '' || (triangleBaseField , triangleHeightField) < 0 || isNaN(triangleBaseField, triangleHeightField)){
+        return alert ('Please provide valid and positive number');
+    };
     const triangleName = getInnerText('triangle-name');
     const triangleArea = 0.5 * parseFloat(triangleBaseField) * parseFloat(triangleHeightField);
     const triangleTwoDecimalNumberArea = triangleArea.toFixed(2);
     areaCalculator(triangleName, triangleTwoDecimalNumberArea);
-    if(triangleArea == '' || triangleArea < 0 || isNaN(triangleArea)){
+   /*  if(triangleArea == '' || triangleArea < 0 || isNaN(triangleArea)){
         return alert ('Please provide valid and positive number');
-    };
-    emptyInputField('triangle-base');
-    emptyInputField('triangle-height');
+    }; */
+/*     emptyInputField('triangle-base');
+    emptyInputField('triangle-height'); */
 });
-    /* -----------------------Triangle EventListener and Function end----------------------------- */
+/* -----------------------Triangle EventListener and Function end----------------------------- */
 
 
-    /* -----------------------Rectangle EventListener and Function start----------------------------- */
+/* -----------------------Rectangle EventListener and Function start----------------------------- */
 document.getElementById('btn-rectangle').addEventListener('click',function(){
     serial += 1;
     const rectangleWidthField = getInputField('rectangle-width');
     const rectangleLengthField = getInputField('rectangle-length');
+    emptyInputField('rectangle-width');
+    emptyInputField('rectangle-length');
+    if((rectangleWidthField , rectangleLengthField)  == '' || (rectangleWidthField , rectangleLengthField) < 0 || isNaN(rectangleWidthField , rectangleLengthField)){
+        return alert ('Please provide valid and positive number');
+    };
     const rectangleName = getInnerText('rectangle-name');
     const rectangleArea = parseFloat(rectangleWidthField) * parseFloat(rectangleLengthField);
     const rectangleTwoDecimalNumberArea = rectangleArea.toFixed(2);
@@ -37,13 +47,13 @@ document.getElementById('btn-rectangle').addEventListener('click',function(){
     if(rectangleArea == '' || rectangleArea < 0 || isNaN(rectangleArea)){
         return alert ('Please provide valid and positive number');
     };
-    emptyInputField('triangle-base');
-    emptyInputField('triangle-height');
+/*     emptyInputField('triangle-base');
+    emptyInputField('triangle-height'); */
 });
-    /* -----------------------Rectangle EventListener and Function end----------------------------- */
+/* -----------------------Rectangle EventListener and Function end----------------------------- */
 
 
-    /* -----------------------Parallelogram EventListener and Function start----------------------------- */
+/* -----------------------Parallelogram EventListener and Function start----------------------------- */
 document.getElementById('btn-parallelogram').addEventListener('click',function(){
     serial += 1;
     const parallelogramBaseField = getInnerText('parallelogram-base');
@@ -53,10 +63,10 @@ document.getElementById('btn-parallelogram').addEventListener('click',function()
     const parallelogramTwoDecimalNumberArea = parallelogramArea.toFixed(2);
     areaCalculator(parallelogramName, parallelogramTwoDecimalNumberArea);
 });
-    /* -----------------------Parallelogram EventListener and Function end----------------------------- */
+/* -----------------------Parallelogram EventListener and Function end----------------------------- */
 
 
-    /* -----------------------Rhombus EventListener and Function start----------------------------- */
+/* -----------------------Rhombus EventListener and Function start----------------------------- */
 document.getElementById('btn-rhombus').addEventListener('click',function(){
     serial += 1;
     const rhombusD1Field = getInnerText('rhombus-d1');
@@ -66,10 +76,10 @@ document.getElementById('btn-rhombus').addEventListener('click',function(){
     const rhombusTwoDecimalNumberArea = rhombusArea.toFixed(2);
     areaCalculator(rhombusName, rhombusTwoDecimalNumberArea);
 });
-    /* -----------------------Rhombus EventListener and Function end----------------------------- */
+/* -----------------------Rhombus EventListener and Function end----------------------------- */
 
 
-    /* -----------------------Pentagon EventListener and Function start----------------------------- */
+/* -----------------------Pentagon EventListener and Function start----------------------------- */
 document.getElementById('btn-pentagon').addEventListener('click',function(){
     serial += 1;
     const pentagonPerimeterField = getInnerText('pentagon-perimeter');
@@ -79,10 +89,10 @@ document.getElementById('btn-pentagon').addEventListener('click',function(){
     const pentagonTwoDecimalNumberArea = pentagonArea.toFixed(2);
     areaCalculator(pentagonName, pentagonTwoDecimalNumberArea);
 });
-    /* -----------------------Pentagon EventListener and Function end----------------------------- */
+/* -----------------------Pentagon EventListener and Function end----------------------------- */
 
 
-    /* -----------------------Ellipse EventListener and Function start----------------------------- */
+/* -----------------------Ellipse EventListener and Function start----------------------------- */
 document.getElementById('btn-ellipse').addEventListener('click',function(){
     serial += 1;
     const PI_Value = 3.14;
@@ -93,10 +103,10 @@ document.getElementById('btn-ellipse').addEventListener('click',function(){
     const ellipseTwoDecimalNumberArea = ellipseArea.toFixed(2);
     areaCalculator(ellipseName, ellipseTwoDecimalNumberArea);
 });
-    /* -----------------------Ellipse EventListener and Function end----------------------------- */
+/* -----------------------Ellipse EventListener and Function end----------------------------- */
 
 
-    /* -----------------------Common functions start----------------------------- */
+/* -----------------------Common functions start----------------------------- */
 function getInnerText(id){
     const textField = document.getElementById(id).innerText;
     return textField;
@@ -123,10 +133,10 @@ function areaCalculator(name,area){
     `;
     parentContainer.appendChild(tr);
 };
-    /* -----------------------Common functions end----------------------------- */
+/* -----------------------Common functions end----------------------------- */
 
-    /* -------------All card random color generate functions start------------- */
 
+/* -------------All card random color generate functions start------------- */
    function colorChangeOne(){
     const color = document.getElementById('triangle-color');
     color.style.backgroundColor = 
@@ -175,7 +185,7 @@ function areaCalculator(name,area){
         ',' + Math.round(Math.random()*255) + ')';
     };
 
-    /* -------------All card random color generate functions end------------- */
+/* -------------All card random color generate functions end------------- */
 
 
    
