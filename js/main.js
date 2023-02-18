@@ -124,3 +124,58 @@ function areaCalculator(name,area){
     parentContainer.appendChild(tr);
 };
     /* -----------------------Common functions end----------------------------- */
+
+    /* -------------All card random color generate functions start------------- */
+
+   function colorChangeOne(){
+    const color = document.getElementById('triangle-color');
+    color.style.backgroundColor = 
+        'rgb('+ Math.round(Math.random()*255) +
+        ',' + Math.round(Math.random()*255) +
+        ',' + Math.round(Math.random()*255) + ')';
+    };
+
+   function colorChangeTwo(){
+    const color = document.getElementById('rectangle-color');
+    color.style.backgroundColor = 
+        'rgb('+ Math.round(Math.random()*255) +
+        ',' + Math.round(Math.random()*255) +
+        ',' + Math.round(Math.random()*255) + ')';
+    };
+
+   function colorChangeThree(){
+    const color = document.getElementById('parallelogram-color');
+    color.style.backgroundColor = 
+        'rgb('+ Math.round(Math.random()*255) +
+        ',' + Math.round(Math.random()*255) +
+        ',' + Math.round(Math.random()*255) + ')';
+    };
+
+   function colorChangeFour(){
+    const color = document.getElementById('rhombus-color');
+    color.style.backgroundColor = 
+        'rgb('+ Math.round(Math.random()*255) +
+        ',' + Math.round(Math.random()*255) +
+        ',' + Math.round(Math.random()*255) + ')';
+    };
+
+   function colorChangeFive(){
+    const color = document.getElementById('pentagon-color');
+    color.style.backgroundColor = 
+        'rgb('+ Math.round(Math.random()*255) +
+        ',' + Math.round(Math.random()*255) +
+        ',' + Math.round(Math.random()*255) + ')';
+    };
+
+   function colorChangeSix(){
+    const color = document.getElementById('ellipse-color');
+    color.style.backgroundColor = 
+        'rgb('+ Math.round(Math.random()*255) +
+        ',' + Math.round(Math.random()*255) +
+        ',' + Math.round(Math.random()*255) + ')';
+    };
+
+    /* -------------All card random color generate functions end------------- */
+
+
+   
