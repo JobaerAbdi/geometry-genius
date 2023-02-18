@@ -6,7 +6,6 @@ document.getElementById('btn-triangle').addEventListener('click',function(){
     const triangleName = getInnerText('triangle-name');
     const triangleArea = 0.5 * triangleBaseField * triangleHeightField;
     areaCalculator(triangleName,triangleArea)
-    //console.log(typeof triangleArea, triangleArea);
     //emptyInputField('triangle-base');
     //emptyInputField('triangle-height');
 
@@ -19,7 +18,6 @@ document.getElementById('btn-rectangle').addEventListener('click',function(){
     const rectangleName = getInnerText('rectangle-name');
     const rectangleArea = rectangleWidthField * rectangleLengthField;
     areaCalculator(rectangleName,rectangleArea)
-    //console.log(typeof triangleArea, triangleArea);
     //emptyInputField('triangle-base');
     //emptyInputField('triangle-height');
 
@@ -32,10 +30,20 @@ document.getElementById('btn-parallelogram').addEventListener('click',function()
     const parallelogramName = getInnerText('parallelogram-name');
     const parallelogramArea = parseInt(parallelogramBaseField) * parseInt(parallelogramHeightField);
     areaCalculator(parallelogramName,parallelogramArea);
-    console.log(parallelogramName,parallelogramArea , typeof parallelogramArea);
     //emptyInputField('triangle-base');
     //emptyInputField('triangle-height');
+});
 
+document.getElementById('btn-rhombus').addEventListener('click',function(){
+    serial += 1;
+    const rhombusD1Field = getInnerText('rhombus-d1');
+    const rhombusD2Field = getInnerText('rhombus-d2');
+    const rhombusName = getInnerText('rhombus-name');
+    const rhombusArea = 0.5 *  parseInt(rhombusD1Field) * parseInt(rhombusD2Field);
+    areaCalculator(rhombusName, rhombusArea);
+    //console.log(parallelogramName,parallelogramArea , typeof parallelogramArea);
+    //emptyInputField('triangle-base');
+    //emptyInputField('triangle-height');
 });
 
 function getInnerText(id){
