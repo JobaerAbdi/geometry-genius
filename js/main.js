@@ -1,3 +1,6 @@
+document.getElementById('blog-id').addEventListener('click',function(){
+    window.location.href = 'index-question.html';
+})
 let serial = 0;
 document.getElementById('btn-triangle').addEventListener('click',function(){
     serial += 1;
@@ -7,9 +10,11 @@ document.getElementById('btn-triangle').addEventListener('click',function(){
     const triangleArea = 0.5 * parseFloat(triangleBaseField) * parseFloat(triangleHeightField);
     const triangleTwoDecimalNumberArea = triangleArea.toFixed(2);
     areaCalculator(triangleName, triangleTwoDecimalNumberArea);
-    //emptyInputField('triangle-base');
-    //emptyInputField('triangle-height');
-
+    if(triangleArea == '' || triangleArea < 0 || isNaN(triangleArea)){
+        return alert ('Please provide valid and positive number');
+    };
+    emptyInputField('triangle-base');
+    emptyInputField('triangle-height');
 });
 
 document.getElementById('btn-rectangle').addEventListener('click',function(){
@@ -20,9 +25,11 @@ document.getElementById('btn-rectangle').addEventListener('click',function(){
     const rectangleArea = parseFloat(rectangleWidthField) * parseFloat(rectangleLengthField);
     const rectangleTwoDecimalNumberArea = rectangleArea.toFixed(2);
     areaCalculator(rectangleName, rectangleTwoDecimalNumberArea);
-    //emptyInputField('triangle-base');
-    //emptyInputField('triangle-height');
-
+    if(rectangleArea == '' || rectangleArea < 0 || isNaN(rectangleArea)){
+        return alert ('Please provide valid and positive number');
+    };
+    emptyInputField('triangle-base');
+    emptyInputField('triangle-height');
 });
 
 document.getElementById('btn-parallelogram').addEventListener('click',function(){
@@ -33,9 +40,6 @@ document.getElementById('btn-parallelogram').addEventListener('click',function()
     const parallelogramArea = parseFloat(parallelogramBaseField) * parseFloat(parallelogramHeightField);
     const parallelogramTwoDecimalNumberArea = parallelogramArea.toFixed(2);
     areaCalculator(parallelogramName, parallelogramTwoDecimalNumberArea);
-
-    //emptyInputField('triangle-base');
-    //emptyInputField('triangle-height');
 });
 
 document.getElementById('btn-rhombus').addEventListener('click',function(){
@@ -46,9 +50,6 @@ document.getElementById('btn-rhombus').addEventListener('click',function(){
     const rhombusArea = 0.5 * parseFloat(rhombusD1Field) * parseFloat(rhombusD2Field);
     const rhombusTwoDecimalNumberArea = rhombusArea.toFixed(2);
     areaCalculator(rhombusName, rhombusTwoDecimalNumberArea);
-    //console.log(parallelogramName,parallelogramArea , typeof parallelogramArea);
-    //emptyInputField('triangle-base');
-    //emptyInputField('triangle-height');
 });
 
 document.getElementById('btn-pentagon').addEventListener('click',function(){
@@ -59,9 +60,6 @@ document.getElementById('btn-pentagon').addEventListener('click',function(){
     const pentagonArea = 0.5 * parseFloat(pentagonPerimeterField) * parseFloat(pentagonBaseField);
     const pentagonTwoDecimalNumberArea = pentagonArea.toFixed(2);
     areaCalculator(pentagonName, pentagonTwoDecimalNumberArea);
-    //console.log(parallelogramName,parallelogramArea , typeof parallelogramArea);
-    //emptyInputField('triangle-base');
-    //emptyInputField('triangle-height');
 });
 
 document.getElementById('btn-ellipse').addEventListener('click',function(){
@@ -73,9 +71,6 @@ document.getElementById('btn-ellipse').addEventListener('click',function(){
     const ellipseArea = PI_Value *  parseFloat(ellipseMajorAxisField) * parseFloat(ellipseMinorAxisField);
     const ellipseTwoDecimalNumberArea = ellipseArea.toFixed(2);
     areaCalculator(ellipseName, ellipseTwoDecimalNumberArea);
-    //console.log(parallelogramName,parallelogramArea , typeof parallelogramArea);
-    //emptyInputField('triangle-base');
-    //emptyInputField('triangle-height');
 });
 
 function getInnerText(id){
@@ -103,4 +98,4 @@ function areaCalculator(name,area){
         <td><button class="px-3 py-1 bg-blue-500 rounded text-white">Convert to m<sup>2</sup></button></td>
     `;
     parentContainer.appendChild(tr);
-}
+};
