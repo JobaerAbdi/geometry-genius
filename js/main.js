@@ -1,6 +1,12 @@
+    
+    /* -----------------------blog button EventListener start----------------------------- */
 document.getElementById('blog-id').addEventListener('click',function(){
     window.location.href = 'index-question.html';
-})
+});
+    /* -----------------------blog button EventListener end----------------------------- */
+
+
+    /* -----------------------Triangle EventListener and Function start----------------------------- */
 let serial = 0;
 document.getElementById('btn-triangle').addEventListener('click',function(){
     serial += 1;
@@ -16,7 +22,10 @@ document.getElementById('btn-triangle').addEventListener('click',function(){
     emptyInputField('triangle-base');
     emptyInputField('triangle-height');
 });
+    /* -----------------------Triangle EventListener and Function end----------------------------- */
 
+
+    /* -----------------------Rectangle EventListener and Function start----------------------------- */
 document.getElementById('btn-rectangle').addEventListener('click',function(){
     serial += 1;
     const rectangleWidthField = getInputField('rectangle-width');
@@ -31,7 +40,10 @@ document.getElementById('btn-rectangle').addEventListener('click',function(){
     emptyInputField('triangle-base');
     emptyInputField('triangle-height');
 });
+    /* -----------------------Rectangle EventListener and Function end----------------------------- */
 
+
+    /* -----------------------Parallelogram EventListener and Function start----------------------------- */
 document.getElementById('btn-parallelogram').addEventListener('click',function(){
     serial += 1;
     const parallelogramBaseField = getInnerText('parallelogram-base');
@@ -41,7 +53,10 @@ document.getElementById('btn-parallelogram').addEventListener('click',function()
     const parallelogramTwoDecimalNumberArea = parallelogramArea.toFixed(2);
     areaCalculator(parallelogramName, parallelogramTwoDecimalNumberArea);
 });
+    /* -----------------------Parallelogram EventListener and Function end----------------------------- */
 
+
+    /* -----------------------Rhombus EventListener and Function start----------------------------- */
 document.getElementById('btn-rhombus').addEventListener('click',function(){
     serial += 1;
     const rhombusD1Field = getInnerText('rhombus-d1');
@@ -51,7 +66,10 @@ document.getElementById('btn-rhombus').addEventListener('click',function(){
     const rhombusTwoDecimalNumberArea = rhombusArea.toFixed(2);
     areaCalculator(rhombusName, rhombusTwoDecimalNumberArea);
 });
+    /* -----------------------Rhombus EventListener and Function end----------------------------- */
 
+
+    /* -----------------------Pentagon EventListener and Function start----------------------------- */
 document.getElementById('btn-pentagon').addEventListener('click',function(){
     serial += 1;
     const pentagonPerimeterField = getInnerText('pentagon-perimeter');
@@ -61,7 +79,10 @@ document.getElementById('btn-pentagon').addEventListener('click',function(){
     const pentagonTwoDecimalNumberArea = pentagonArea.toFixed(2);
     areaCalculator(pentagonName, pentagonTwoDecimalNumberArea);
 });
+    /* -----------------------Pentagon EventListener and Function end----------------------------- */
 
+
+    /* -----------------------Ellipse EventListener and Function start----------------------------- */
 document.getElementById('btn-ellipse').addEventListener('click',function(){
     serial += 1;
     const PI_Value = 3.14;
@@ -72,7 +93,10 @@ document.getElementById('btn-ellipse').addEventListener('click',function(){
     const ellipseTwoDecimalNumberArea = ellipseArea.toFixed(2);
     areaCalculator(ellipseName, ellipseTwoDecimalNumberArea);
 });
+    /* -----------------------Ellipse EventListener and Function end----------------------------- */
 
+
+    /* -----------------------Common functions start----------------------------- */
 function getInnerText(id){
     const textField = document.getElementById(id).innerText;
     return textField;
@@ -99,3 +123,4 @@ function areaCalculator(name,area){
     `;
     parentContainer.appendChild(tr);
 };
+    /* -----------------------Common functions end----------------------------- */
